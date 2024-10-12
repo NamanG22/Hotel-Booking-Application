@@ -42,6 +42,10 @@ app.use("/api/my-hotels", myHotelRoutes);
 // app.use("/api/hotels", hotelRoutes);
 // app.use("/api/my-bookings", bookingRoutes);
 
+app.get("*",(req:Request,res:Response)=>{
+    res.sendFile(path.join(__dirname,"../../frontend/dist/index.html"));
+})
+
 app.get("/api/test",async (req:Request,res:Response)=> {
     res.json({message:"Hello"});
 });
