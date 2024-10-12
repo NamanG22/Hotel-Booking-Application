@@ -7,38 +7,77 @@ import {
   Routes,
   Navigate,
 } from "react-router-dom";
+import AddHotel from "./pages/AddHotel";
+import { useAppContext } from './contexts/AppContext';
+
+
+
 const App = ()=>{
+  const {isLoggedIn} = useAppContext();
   return(
     <Router>
       <Routes>
-
         <Route path="/" element={
-            <Layout>
-              <p>Home Page</p>
-            </Layout>
-          } />
+          <Layout>
+            <p>Home Page</p>
+          </Layout>
+        } />
 
         <Route path="/search" element={
-            <Layout>
-              <p>Search Page</p>
-            </Layout>
-          } />
+          <Layout>
+            <p>Search Page</p>
+          </Layout>
+        } />
 
         <Route path="/register" element={
-            <Layout>
-              <Register/>
-            </Layout>
-          } />
+          <Layout>
+            <Register/>
+          </Layout>
+        } />
 
         <Route path="/sign-in" element={
-            <Layout>
-              <SignIn/>
-            </Layout>
-          } />
+          <Layout>
+            <SignIn/>
+          </Layout>
+        } />
+
+        {isLoggedIn && (
+          <>
+            {/* <Route path="/hotel/:hotelId/booking" element={
+              <Layout>
+                <Booking />
+              </Layout>
+            } /> */}
+
+            <Route path="/add-hotel" element={
+              <Layout>
+                <AddHotel />
+              </Layout>
+            } />
+
+            {/* <Route path="/edit-hotel/:hotelId" element={
+              <Layout>
+                <EditHotel />
+              </Layout>
+            } />
+
+            <Route path="/my-hotels" element={
+              <Layout>
+                <MyHotels />
+              </Layout>
+            } />
+          
+            <Route path="/my-bookings" element={
+              <Layout>
+                <MyBookings />
+              </Layout>
+            } /> */}
+          </>
+        )}
           
         <Route path="*" element={
-            <Navigate to="/" />
-          } />
+          <Navigate to="/" />
+        } />
 
       </Routes>
     </Router>
