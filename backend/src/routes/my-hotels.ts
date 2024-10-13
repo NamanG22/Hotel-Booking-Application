@@ -104,7 +104,8 @@ router.put(
       );
 
       if (!hotel) {
-        return res.status(404).json({ message: "Hotel not found" });
+        res.status(404).json({ message: "Hotel not found" });
+        return; 
       }
 
       const files = req.files as Express.Multer.File[];
