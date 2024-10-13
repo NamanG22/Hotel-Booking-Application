@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 import AddHotel from "./pages/AddHotel";
 import { useAppContext } from './contexts/AppContext';
+import MyHotels from "./pages/MyHotels";
 
 
 
@@ -59,7 +60,7 @@ const App = ()=>{
               <Layout>
                 <EditHotel />
               </Layout>
-            } />
+            } /> */}
 
             <Route path="/my-hotels" element={
               <Layout>
@@ -67,7 +68,7 @@ const App = ()=>{
               </Layout>
             } />
           
-            <Route path="/my-bookings" element={
+            {/* <Route path="/my-bookings" element={
               <Layout>
                 <MyBookings />
               </Layout>

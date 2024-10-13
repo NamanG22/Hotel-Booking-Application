@@ -4,8 +4,7 @@ import cloudinary from "cloudinary";
 import Hotel from "../models/hotels";
 import verifyToken from "../middleware/auth";
 import { body } from "express-validator";
-// import { HotelType } from "../shared/types";
-import { HotelType } from '../models/hotels';
+import { HotelType } from "../shared/types";
 
 const router = express.Router();
 
@@ -63,14 +62,14 @@ router.post(
   }
 );
 
-// router.get("/", verifyToken, async (req: Request, res: Response) => {
-//   try {
-//     const hotels = await Hotel.find({ userId: req.userId });
-//     res.json(hotels);
-//   } catch (error) {
-//     res.status(500).json({ message: "Error fetching hotels" });
-//   }
-// });
+router.get("/", verifyToken, async (req: Request, res: Response) => {
+  try {
+    const hotels = await Hotel.find({ userId: req.userId });
+    res.json(hotels);
+  } catch (error) {
+    res.status(500).json({ message: "Error fetching hotels" });
+  }
+});
 
 // router.get("/:id", verifyToken, async (req: Request, res: Response) => {
 //   const id = req.params.id.toString();
