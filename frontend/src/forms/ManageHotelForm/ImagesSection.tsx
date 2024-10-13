@@ -17,6 +17,7 @@ const ImagesSection = () => {
     imageUrl: string
   ) => {
     event.preventDefault();
+    // because default action of click in form is to submit the form
     setValue(
       "imageUrls",
       existingImageUrls.filter((url) => url !== imageUrl)
