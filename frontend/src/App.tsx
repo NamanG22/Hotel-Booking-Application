@@ -1,6 +1,7 @@
 import Layout from './layouts/Layout';
 import Register from './pages/Register';
 import SignIn from './pages/SignIn';
+import Search from './pages/Search';
 import {
   BrowserRouter as Router,
   Route,
@@ -27,7 +28,7 @@ const App = ()=>{
 
         <Route path="/search" element={
           <Layout>
-            <p>Search Page</p>
+            <Search/>
           </Layout>
         } />
 
