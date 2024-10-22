@@ -12,6 +12,7 @@ import AddHotel from "./pages/AddHotel";
 import { useAppContext } from './contexts/AppContext';
 import MyHotels from "./pages/MyHotels";
 import EditHotel from './pages/EditHotel';
+import Detail from './pages/Detail';
 
 
 
@@ -29,6 +30,12 @@ const App = ()=>{
         <Route path="/search" element={
           <Layout>
             <Search/>
+          </Layout>
+        } />
+
+        <Route path="/detail/:hotelId" element={
+          <Layout>
+            <Detail/>
           </Layout>
         } />
 
